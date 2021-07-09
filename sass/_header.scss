@@ -1,0 +1,101 @@
+.header {
+    grid-row: 1 / 3;
+    grid-column: full-start / full-end;
+    
+    background-image: url(../img/security-guard-min.jpg);
+    background-position: center center;
+    background-size: cover;
+
+    padding: 8rem;
+    padding-bottom: 1rem;
+    position: relative; // for the scroll down arrow
+
+    display: grid;
+    grid-template-rows: 2fr min-content 1fr min-content;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-gap: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: 1fr min-content 1fr min-content;
+
+        background-image: url(../img/security-guard-min.jpg);
+        background-position: right center;
+        background-size: cover;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-rows: 1fr min-content 1fr min-content;
+
+        padding: 3rem;
+
+        background-image: url(../img/hero_background-min.jpg);
+        background-position: left;
+        background-size: cover;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        grid-template-rows: 1fr min-content 1fr min-content;
+        
+        padding: 2rem;
+
+        background-image: url(../img/hero_background-min.jpg);
+        background-position: left;
+        background-size: cover;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 5rem;
+        color: $color-primary;
+
+        align-self: end;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-row: 2 / 3;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            grid-row: 2 / 3;
+
+            font-size: 3.5rem;
+        }
+    }
+
+    h1::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 10rem;
+        background-color: $color-primary;
+        margin-top: 2rem;
+    }
+
+    p {
+        font-size: 2rem;
+        color: #fff;
+        margin-top: 3px;
+        width: 80%;
+
+        align-content: end;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-row: 3 / 4;
+
+            width: 100%;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            grid-row: 3 / 4;
+
+            width: 100%;
+            text-shadow: $text-shadow;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            grid-row: 3 / 4;
+
+            width: 100%;
+            text-shadow: $text-shadow;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.features__text {
+    grid-column: full-start / full-end;
+
+    margin: 15rem 0 7.5rem 0;
+    padding: 0 5rem;
+    font-size: 1.7rem;
+    text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        margin-top: 7.5rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        padding: 0 2rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        padding: 0 1rem;
+    }
+}
+
+
+
+.features {
+    grid-column: center-start / center-end;
+
+    margin-bottom: 15rem;
+    font-size: 1.6rem;
+    color: $color-grey-dark-2;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 7rem;
+    align-items: start;
+
+    &:last-child {
+        grid-column: 2 / -1;
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+        grid-gap: 5rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: repeat(auto-fit, min-content);
+        grid-template-columns: none;
+        grid-gap: 4rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-bottom: 6rem;
+        grid-gap: 2.5rem;   
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        margin-bottom: 6rem;
+    }
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2rem;
+
+    &__icon {
+        width: 4.5rem;
+        height: 4.5rem;
+        fill: $color-primary;
+    }
+
+    &__list {
+        grid-column: 2 / 3;
+    }
+
+    .heading--4 {
+        align-self: center;
+        color: $color-grey-dark-2;
+    }
+
+    ul {
+        list-style: none;
+        list-style-position: inside;
+        line-height: 1.5;
+    }
+
+    li::before {
+        content: '';
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: .5rem;
+        transform: translateY(1px);
+
+        // older browswers
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
+        // newer browswers  
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: $color-primary;
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
+    }
+}
+
+.audit {
+    grid-row: 3 / 4;
+    grid-column: 2 / -1;
+    color: $color-grey-dark-2;
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: 2rem;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-row: 8 / 9;
+    }
+}

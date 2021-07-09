@@ -1,0 +1,57 @@
+.portofolio {
+    grid-column: full-start / full-end;
+
+    margin-top: 7.5rem;
+    margin-bottom: 15rem;
+    padding: 1.5rem;
+
+    display: grid;
+    grid-template-rows: 20rem repeat(3, 11vw);
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: 20rem repeat(5, 11vw);
+        grid-template-columns: repeat(6, 1fr);
+
+        margin-bottom: 7.5rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin: 2rem 0;
+
+        grid-template-rows: 20rem repeat(8, 25vw);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        margin-top: 0;
+        grid-template-rows: 20rem repeat(8, 25vw);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        grid-column: 1 / -1;
+
+        font-size: 3.5rem;
+
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        align-items: center;
+        grid-column-gap: 2rem;
+        
+        &::before, &::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background-color: $color-primary;
+        }
+    }
+}
+
